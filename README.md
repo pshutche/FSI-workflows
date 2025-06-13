@@ -13,7 +13,7 @@ myModule.py
 -----------
 Adaptive time-stepping module to be hooked into SyC GUI expression functions
 Note: there is an active bug in versions pre 2026R1 that results in changes to the module code not updating in the data model. Instead a previous version is used.
-Workaround: It is necessary to rename at least the function inside the module. A more robust workaround is to delete the expression function in SyC GUI, . If function name does not appear, reload expression function.
+Workaround: It is necessary to rename at least the function inside the module. A more robust workaround is to delete the expression function in SyC GUI, then recreate it. If function name does not appear first time, reload expression function.
 Time-step is CFL driven. A report definition and report file must be created in Fluent with step, time, mesh-based cfl, vof cfl (4 columns). User can choose to take average or max of these two. If vof cfl is used it is recommended to define the report definition with the following expression:
 
 Maximum(ElementConvectionCourantNumber*4*Volumefraction(phase='liq')*Volumefraction(phase='gas'),['fluid'])
